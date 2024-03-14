@@ -34,7 +34,7 @@ async function main() {
     NetworkID=21337;
   }
   const carpeta = "/json_files";
-  const account = derive.familySeed(seed);
+  const account = derive.familySeed(seed, {algorithm: "secp256k1"});
   const client = new xrpl.Client(network);
   await client.connect();
   const my_wallet = xrpl.Wallet.fromSeed(seed);
